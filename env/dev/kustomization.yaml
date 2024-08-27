@@ -11,4 +11,4 @@ images:
   newName: ghcr.io/akuity/guestbook
   newTag: v0.0.1
 - name: ghcr.io/jessesuen/guestbook
-  newTag: v0.0.84
+  newTag: v0.0.87
