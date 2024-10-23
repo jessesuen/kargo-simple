@@ -19,7 +19,7 @@ spec:
       # to the ./src directory.
       - uses: git-clone
         config:
-          repoURL: https://github.com/akuity/kargo-simple.git
+          repoURL: https://github.com/jessesuen/kargo-simple.git
           checkout:
           - branch: main
             path: ./src
@@ -30,7 +30,7 @@ spec:
         config:
           path: ./src/env/dev
           images:
-          - image: ghcr.io/akuity/guestbook
+          - image: ghcr.io/jessesuen/guestbook
       # Commit the changes to the Git repository.
       - uses: git-commit
         as: commit
@@ -50,7 +50,7 @@ spec:
       #     apps:
       #     - name: guestbook-dev
       #       sources:
-      #       - repoURL: https://github.com/akuity/kargo-simple.git
+      #       - repoURL: https://github.com/jessesuen/kargo-simple.git
       #         desiredCommitFromStep: commit
 ---
 apiVersion: kargo.akuity.io/v1alpha1
@@ -76,7 +76,7 @@ spec:
       # to the ./src directory.
       - uses: git-clone
         config:
-          repoURL: https://github.com/akuity/kargo-simple.git
+          repoURL: https://github.com/jessesuen/kargo-simple.git
           checkout:
           - branch: main
             path: ./src
@@ -87,7 +87,7 @@ spec:
         config:
           path: ./src/env/staging
           images:
-          - image: ghcr.io/akuity/guestbook
+          - image: ghcr.io/jessesuen/guestbook
       # Commit the changes to the Git repository.
       - uses: git-commit
         as: commit
@@ -107,7 +107,7 @@ spec:
       #     apps:
       #       - name: guestbook-staging
       #         sources:
-      #         - repoURL: https://github.com/akuity/kargo-simple.git
+      #         - repoURL: https://github.com/jessesuen/kargo-simple.git
       #           desiredCommitFromStep: commit
 ---
 apiVersion: kargo.akuity.io/v1alpha1
@@ -133,7 +133,7 @@ spec:
       # to the ./src directory.
       - uses: git-clone
         config:
-          repoURL: https://github.com/akuity/kargo-simple.git
+          repoURL: https://github.com/jessesuen/kargo-simple.git
           checkout:
           - branch: main
             path: ./src
@@ -144,7 +144,7 @@ spec:
         config:
           path: ./src/env/prod
           images:
-          - image: ghcr.io/akuity/guestbook
+          - image: ghcr.io/jessesuen/guestbook
       # Commit the changes to the Git repository.
       - uses: git-commit
         as: commit
@@ -162,14 +162,14 @@ spec:
       - uses: git-open-pr
         as: open-pr
         config:
-          repoURL: https://github.com/akuity/kargo-simple.git
+          repoURL: https://github.com/jessesuen/kargo-simple.git
           sourceBranchFromStep: push
           targetBranch: main
       # Wait for the pull request to be merged.
       - uses: git-wait-for-pr
         as: wait-for-pr
         config:
-          repoURL: https://github.com/akuity/kargo-simple.git
+          repoURL: https://github.com/jessesuen/kargo-simple.git
           prNumberFromStep: open-pr
       # If you have an Argo CD Application that should be synced after the Git
       # repository is updated, uncomment the following lines and specify the
@@ -179,5 +179,5 @@ spec:
       #     apps:
       #     - name: guestbook-prod
       #       sources:
-      #       - repoURL: https://github.com/akuity/kargo-simple.git
+      #       - repoURL: https://github.com/jessesuen/kargo-simple.git
       #         desiredCommitFromStep: commit
