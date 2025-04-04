@@ -5,4 +5,4 @@ resources:
 namespace: guestbook-simple-staging
 images:
 - name: ghcr.io/jessesuen/guestbook
-  newTag: v0.0.76
+  newTag: v0.0.81
